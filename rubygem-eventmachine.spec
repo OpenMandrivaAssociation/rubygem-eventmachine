@@ -2,13 +2,12 @@
 
 Summary:	A fast, single-threaded engine for arbitrary network communications
 Name:		rubygem-%{oname}
-Version:	0.12.10
-Release:	%mkrel 1
+Version:	1.0.0
+Release:	1
 License:	MIT
 Group:		Development/Ruby
 URL:		http://%{oname}.rubyforge.org/
 Source0:	http://gems.rubyforge.org/gems/%{oname}-%{version}.gem
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	ruby-RubyGems ruby-devel
 
 %description
@@ -28,21 +27,26 @@ TCP/IP, especially if custom protocols are required.
 %build
 
 %install
-rm -rf %{buildroot}
 gem install -E -n %{buildroot}%{_bindir} --local --install-dir %{buildroot}/%{ruby_gemdir} --force %{SOURCE0}
 rm -rf %{buildroot}%{ruby_gemdir}/{cache,gems/%{oname}-%{version}/ext}
 
 mkdir -p %{buildroot}%{ruby_sitearchdir}
 mv %{buildroot}%{ruby_gemdir}/gems/%{oname}-%{version}/lib/*.so  %{buildroot}%{ruby_sitearchdir}
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc %{ruby_gemdir}/doc/%{oname}-%{version}
 %{ruby_gemdir}/gems/%{oname}-%{version}
 %{ruby_gemdir}/specifications/%{oname}-%{version}.gemspec
 %{ruby_sitearchdir}/fastfilereaderext.so
 %{ruby_sitearchdir}/rubyeventmachine.so
 
+
+
+%changelog
+* Sat Sep 18 2010 Per Øyvind Karlsen <peroyvind@mandriva.org> 0.12.10-1mdv2011.0
++ Revision: 579427
+- import rubygem-eventmachine
+
+
+* Sat Sep 18 2010 Per Øyvind Karlsen <peroyvind@mandriva.org> 0.12.10-1
+- initial release
