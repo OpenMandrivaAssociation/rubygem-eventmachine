@@ -3,7 +3,7 @@
 Summary:	A fast, single-threaded engine for arbitrary network communications
 Name:		rubygem-%{oname}
 Version:	1.0.0
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Ruby
 URL:		http://%{oname}.rubyforge.org/
@@ -19,8 +19,8 @@ servers and clients. To create a server or client, a Ruby program only needs
 to specify the IP address and port, and provide a Module that implements the
 communications protocol. Implementations of several standard network protocols
 are provided with the package, primarily to serve as examples. The real goal of
-EventMachine is to enable programs to easily interface with other programs using
-TCP/IP, especially if custom protocols are required.
+EventMachine is to enable programs to easily interface with other programs
+using TCP/IP, especially if custom protocols are required.
 
 %prep
 
