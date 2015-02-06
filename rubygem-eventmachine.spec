@@ -3,7 +3,7 @@
 Summary:	A fast, single-threaded engine for arbitrary network communications
 Name:		rubygem-%{oname}
 Version:	1.0.0
-Release:	2
+Release:	3
 License:	MIT
 Group:		Development/Ruby
 URL:		http://%{oname}.rubyforge.org/
