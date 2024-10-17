@@ -6,7 +6,7 @@ Version:	1.0.0
 Release:	3
 License:	MIT
 Group:		Development/Ruby
-URL:		http://%{oname}.rubyforge.org/
+URL:		https://%{oname}.rubyforge.org/
 Source0:	http://gems.rubyforge.org/gems/%{oname}-%{version}.gem
 BuildRequires:	ruby-RubyGems ruby-devel
 
